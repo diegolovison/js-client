@@ -950,25 +950,19 @@ $ npm install
 Next, start the Infinispan Servers via:
 
 ```bash
-$ ./run-server.sh
+$ ./run-servers.sh
 ```
 
 To run the testsuite once execute:
 
 ```bash
-$ ./run-testsuite.sh
-```
-
-To run tests continuously execute:
-
-```bash
-$ ./node_modules/.bin/jasmine-node spec --autotest --watch lib --captureExceptions
+$ npm test
 ```
 
 To run individual tests execute:
 
 ```bash
-$ node node_modules/jasmine-node/lib/jasmine-node/cli.js spec/infinispan_local_spec.js --captureExceptions
+$ npx jasmine spec/infinispan_local_spec.js
 ```
 
 To help with testing, you can quickly run the smoke tests via:
@@ -982,6 +976,9 @@ Both testsuite and smoke tests can be run with older protocol versions, e.g.
 ```bash
 $ protocol=2.5 ./smoke-tests.sh
 ```
+
+# Test result
+The tests result are exported as a JUnit file in `out/junit-report` folder.
 
 # Manual stress tests
 

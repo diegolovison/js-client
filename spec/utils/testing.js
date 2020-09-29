@@ -768,3 +768,13 @@ function readFileAsync(path) {
     });
   });
 }
+
+var reporters = require('jasmine-reporters');
+
+var junitReporter = new reporters.JUnitXmlReporter({
+  savePath: 'out/junit-report',
+  filePrefix: 'TEST-all',
+  consolidateAll: true
+});
+
+jasmine.getEnv().addReporter(junitReporter);

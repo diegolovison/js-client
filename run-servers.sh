@@ -110,7 +110,7 @@ function startServer()
 #deleting the testable server directory
 rm -drf server/${SERVER_DIR}
 
-export JAVA_OPTS="-Xms512m -Xmx1024m -XX:MetaspaceSize=128M -XX:MaxMetaspaceSize=512m"
+export JAVA_OPTS="-Xms512m -Xmx1024m -XX:MetaspaceSize=128M -XX:MaxMetaspaceSize=512m -Djava.net.preferIPv4Stack=true"
 
 startServer "$1" infinispan.xml false 11222 "server-local"
 startServer "$1" infinispan-clustered.xml false 11322 "server-one"
